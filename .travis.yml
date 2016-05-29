@@ -1,0 +1,6 @@
+language: swift
+
+xcode_project: Scenario.xcodeproj # path to your xcodeproj folder
+xcode_scheme: Scenario
+xcode_sdk: iphonesimulator
+osx_image: xcode7.3
