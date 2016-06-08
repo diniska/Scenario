@@ -6,21 +6,21 @@
 //  Copyright © 2016 diniska. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public typealias ScenarioParameters = [String: AnyObject!]
-public typealias ScenarioResults = [String: AnyObject!]
-public typealias ScenarioResulCallback = (result: ScenarioResults) -> ()
+public typealias ScenarioParameters = [String: Any]
+public typealias ScenarioResults = [String: Any]
+public typealias ScenarioResultCallback = (result: ScenarioResults) -> ()
 
 public protocol Scenario {
-    func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResulCallback?)
+    func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?)
 }
 
 public struct ScenarioStartedFromModalViewController: Scenario {
-    public var createInitialViewController: (parameters: ScenarioParameters?, callback: ScenarioResulCallback) -> UIViewController?
+    public var createInitialViewController: (parameters: ScenarioParameters?, callback: ScenarioResultCallback) -> UIViewController?
 
-    public func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResulCallback?) {
-        let dismissCallback: ScenarioResulCallback = {[weak viewController] (result) in
+    public func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
+        let dismissCallback: ScenarioResultCallback = {[weak viewController] (result) in
             viewController?.dismissViewControllerAnimated(true) {
                 callback?(result: result)
             }
