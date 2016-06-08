@@ -11,10 +11,10 @@ import XCTest
 
 private class SimpeScenario: Scenario {
     var lastParameters: ScenarioParameters?
-    var lastCallback: ScenarioResulCallback?
+    var lastCallback: ScenarioResultCallback?
     var lastViewController: UIViewController?
 
-    private func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResulCallback?) {
+    private func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
         lastParameters = parameters
         lastCallback = callback
         lastViewController = viewController
@@ -71,27 +71,5 @@ class ScenarioListTests: XCTestCase {
         XCTAssertEqual(scenario.lastParameters?[parametersKey] as? String, parametersValue)
         XCTAssertNil(scenario.lastCallback)
         XCTAssertEqual(scenario.lastViewController, viewController)
-    }
-
-    func testScenarioPerformerAddsCallbackToScenarioCall() {
-        var list = ScenarioList()
-        let name = "name"
-        let viewController = UIViewController()
-        var callbackCalled = false
-        let callback: ScenarioResulCallback = {_ in callbackCalled = true }
-
-        let scenario = SimpeScenario()
-        list[name] = scenario
-        var performer = ScenarioList.ScenarioPerformer(scenario: scenario)
-        performer.callback = callback
-        list.addPerformer(performer, with: name)
-
-        list.performScenario(with: name, from: viewController)
-
-        XCTAssertNil(scenario.lastParameters)
-        XCTAssertNotNil(scenario.lastCallback)
-        XCTAssertEqual(scenario.lastViewController, viewController)
-        scenario.lastCallback?(result: [:])
-        XCTAssertTrue(callbackCalled)
     }
 }

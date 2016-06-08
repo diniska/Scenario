@@ -23,7 +23,7 @@ public struct ScenarioList {
         }
     }
 
-    public func performScenario(with name: ScenarioName, from viewController: UIViewController, callback:ScenarioResultCallback) {
+    public func performScenario(with name: ScenarioName, from viewController: UIViewController, callback:ScenarioResultCallback? = nil) {
         guard let scenario = self[name]
             else { debugPrint("There is no scenario with name \(name) in scenario list"); return }
 
