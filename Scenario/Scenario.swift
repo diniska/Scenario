@@ -32,9 +32,9 @@ public struct ScenarioStartedFromModalViewController: Scenario {
 }
 
 public struct ScenarioStartedFromNavigationViewController: Scenario {
-    public var createInitialViewController: (parameters: ScenarioParameters?, callback: ScenarioResulCallback) -> UIViewController?
+    public var createInitialViewController: (parameters: ScenarioParameters?, callback: ScenarioResultCallback) -> UIViewController?
 
-    public func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResulCallback?) {
+    public func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
         let presentationBlock: (initialViewController: UIViewController) -> ()
         let dismissBlock: () -> ()
 
