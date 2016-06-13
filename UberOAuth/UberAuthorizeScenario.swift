@@ -8,6 +8,7 @@
 
 import UIKit
 import UberKit
+import Scenario
 
 /**
  - Parameter parameters: [UberKitParameterKey: UberKit object]

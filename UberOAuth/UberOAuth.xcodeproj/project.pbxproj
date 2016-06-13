@@ -14,8 +14,6 @@
 		07FEBE691D0DEB9900532EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FEBE671D0DEB9900532EB2 /* LaunchScreen.storyboard */; };
 		07FEBE741D0DEB9900532EB2 /* UberOAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEBE731D0DEB9900532EB2 /* UberOAuthTests.swift */; };
 		07FEBE7F1D0DEBE200532EB2 /* UberAuthorizeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEBE7E1D0DEBE200532EB2 /* UberAuthorizeScenario.swift */; };
-		07FEBE8F1D0DEE5E00532EB2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEBE8C1D0DEE5E00532EB2 /* Scenario.swift */; };
-		07FEBE901D0DEE5E00532EB2 /* ScenarioList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEBE8D1D0DEE5E00532EB2 /* ScenarioList.swift */; };
 		9F2D1042895F305A51DDAA54 /* Pods_UberOAuthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88A146E8AAB4D5C73264B0C /* Pods_UberOAuthTests.framework */; };
 		F78ED9FA94670F76433D2440 /* Pods_UberOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F2C96634FE14572906130C /* Pods_UberOAuth.framework */; };
 /* End PBXBuildFile section */
@@ -42,8 +40,6 @@
 		07FEBE731D0DEB9900532EB2 /* UberOAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberOAuthTests.swift; sourceTree = "<group>"; };
 		07FEBE751D0DEB9900532EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FEBE7E1D0DEBE200532EB2 /* UberAuthorizeScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberAuthorizeScenario.swift; sourceTree = "<group>"; };
-		07FEBE8C1D0DEE5E00532EB2 /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
-		07FEBE8D1D0DEE5E00532EB2 /* ScenarioList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioList.swift; sourceTree = "<group>"; };
 		4CC5FF32C2BE066E1E91F9D1 /* Pods-UberOAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberOAuth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UberOAuth/Pods-UberOAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		69053E8CCA66FA02280AFC33 /* Pods-UberOAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberOAuthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UberOAuthTests/Pods-UberOAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84E8DA6F30EC7E0A15C150E3 /* Pods-UberOAuthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberOAuthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UberOAuthTests/Pods-UberOAuthTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 		07FEBE521D0DEB9900532EB2 = {
 			isa = PBXGroup;
 			children = (
-				07FEBE891D0DEE5E00532EB2 /* Scenario */,
 				07FEBE7E1D0DEBE200532EB2 /* UberAuthorizeScenario.swift */,
 				07FEBE5D1D0DEB9900532EB2 /* UberOAuth */,
 				07FEBE721D0DEB9900532EB2 /* UberOAuthTests */,
@@ -114,16 +109,6 @@
 				07FEBE751D0DEB9900532EB2 /* Info.plist */,
 			);
 			path = UberOAuthTests;
-			sourceTree = "<group>";
-		};
-		07FEBE891D0DEE5E00532EB2 /* Scenario */ = {
-			isa = PBXGroup;
-			children = (
-				07FEBE8C1D0DEE5E00532EB2 /* Scenario.swift */,
-				07FEBE8D1D0DEE5E00532EB2 /* ScenarioList.swift */,
-			);
-			name = Scenario;
-			path = ../Scenario;
 			sourceTree = "<group>";
 		};
 		15F57E58B0674E0716FA55A3 /* Pods */ = {
@@ -347,8 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FEBE611D0DEB9900532EB2 /* ViewController.swift in Sources */,
-				07FEBE901D0DEE5E00532EB2 /* ScenarioList.swift in Sources */,
-				07FEBE8F1D0DEE5E00532EB2 /* Scenario.swift in Sources */,
 				07FEBE7F1D0DEBE200532EB2 /* UberAuthorizeScenario.swift in Sources */,
 				07FEBE5F1D0DEB9900532EB2 /* AppDelegate.swift in Sources */,
 			);

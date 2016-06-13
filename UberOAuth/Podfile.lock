@@ -1,12 +1,15 @@
 PODS:
+  - Scenario (0.0.1-beta)
   - UberKit (0.2)
 
 DEPENDENCIES:
+  - Scenario (= 0.0.1-beta)
   - UberKit
 
 SPEC CHECKSUMS:
+  Scenario: d134eee1bec7268c6ac13a4aefc33253e45cbd48
   UberKit: 3c4767f8c2b317be450c3de48acbe6b632306004
 
-PODFILE CHECKSUM: 9dac1bbee57b1c5a6b01cb86f1256210477379a7
+PODFILE CHECKSUM: 34f0124dd352b9a31e9c9819113c3024fae5f116
 
 COCOAPODS: 1.0.0
