@@ -6,8 +6,7 @@ target 'UberOAuth' do
   use_frameworks!
 
   # Pods for UberOAuth
-  #  pod 'Scenario', '0.0.1-beta'
-  pod 'Scenario/UberOAuth', :path => '../Scenario.podspec'
+  pod 'Scenario/UberOAuth', '0.0.1-beta1'
 
   target 'UberOAuthTests' do
     inherit! :search_paths
