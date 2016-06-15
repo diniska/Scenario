@@ -14,6 +14,8 @@ public struct ScenarioList {
     private var items: [ScenarioName: Scenario] = [:]
     private var parameters: [ScenarioName: ScenarioParameters] = [:]
 
+    public init() {}
+
     public subscript(name: ScenarioName) -> Scenario? {
         get {
             return items[name]
