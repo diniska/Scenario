@@ -8,28 +8,39 @@
 
 import UIKit
 import UberKit
-import Scenario
 
 /**
  - Parameter parameters: [UberKitParameterKey: UberKit object]
  - Returns: [UberKitParameterKey: uber kit object, AccessTokenParameterKey: access token received from OAuth] or [ErrorParameterKey: NSError]
  */
-class UberAuthorizeScenario: NSObject, Scenario {
-    struct InputParameters {
-        let uberClientID: String
-        let uberClientSecret: String
-        let currentApplicationDeeplinkId: String //without slashed, like "uber", not "uber://"
-        let uberApplicationName: String //Current application name in uber developer console
+public class UberAuthorizeScenario: NSObject, Scenario {
+    public struct InputParameters {
+        public let uberClientID: String
+        public let uberClientSecret: String
+        /**
+         Without slashed, like "uber", not "uber://"
+         */
+        public let currentApplicationDeeplinkId: String
+        /**
+        Current application name in uber developer console
+         */
+        public let uberApplicationName: String
+        public init(uberClientID: String, uberClientSecret: String, currentApplicationDeeplinkId: String, uberApplicationName: String) {
+            self.uberClientID = uberClientID
+            self.uberClientSecret = uberClientSecret
+            self.currentApplicationDeeplinkId = currentApplicationDeeplinkId
+            self.uberApplicationName = uberApplicationName
+        }
     }
 
-    static let InputParametersKey = "input"
+    public static let InputParametersKey = "input"
 
-    enum OutputParameters {
+    public enum OutputParameters {
         case Success(uberKit: UberKit, accessToken: String)
         case Error(error: NSError)
     }
 
-    static let OutputParametersKey = "output"
+    public static let OutputParametersKey = "output"
 
     private var uberKit: UberKit?
     private var callback: ScenarioResultCallback?
@@ -38,7 +49,7 @@ class UberAuthorizeScenario: NSObject, Scenario {
         return uberKit != nil || callback != nil
     }
 
-    func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
+    public func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
         guard inProgress == false
             else { debugPrint("Scenario already in progress."); return }
 
@@ -67,7 +78,7 @@ class UberAuthorizeScenario: NSObject, Scenario {
      * Don't forget to implement this method call from AppDelegate's method
      * func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool
      */
-    func handleLoginRedirectFromUrl(url: NSURL!, sourceApplication: String!) -> Bool {
+    public func handleLoginRedirectFromUrl(url: NSURL!, sourceApplication: String!) -> Bool {
         return uberKit?.handleLoginRedirectFromUrl(url, sourceApplication: sourceApplication) ?? false
     }
 
@@ -79,7 +90,7 @@ class UberAuthorizeScenario: NSObject, Scenario {
 }
 
 extension UberAuthorizeScenario: UberKitDelegate {
-    func uberKit(uberKit: UberKit!, loginFailedWithError error: NSError!) {
+    public func uberKit(uberKit: UberKit!, loginFailedWithError error: NSError!) {
         defer {
             clearData()
         }
@@ -87,7 +98,7 @@ extension UberAuthorizeScenario: UberKitDelegate {
         callback?(result: result)
     }
 
-    func uberKit(uberKit: UberKit!, didReceiveAccessToken accessToken: String!) {
+    public func uberKit(uberKit: UberKit!, didReceiveAccessToken accessToken: String!) {
         defer {
             clearData()
         }

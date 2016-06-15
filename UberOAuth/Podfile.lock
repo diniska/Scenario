@@ -1,15 +1,21 @@
 PODS:
-  - Scenario (0.0.1-beta)
+  - Scenario/Core (0.0.1-beta)
+  - Scenario/UberOAuth (0.0.1-beta):
+    - Scenario/Core
+    - UberKit
   - UberKit (0.2)
 
 DEPENDENCIES:
-  - Scenario (= 0.0.1-beta)
-  - UberKit
+  - Scenario/UberOAuth (from `../Scenario.podspec`)
+
+EXTERNAL SOURCES:
+  Scenario:
+    :path: ../Scenario.podspec
 
 SPEC CHECKSUMS:
-  Scenario: d134eee1bec7268c6ac13a4aefc33253e45cbd48
+  Scenario: 8c5f5f4d5aea43f7de9018e75c7c4adbe21e4af9
   UberKit: 3c4767f8c2b317be450c3de48acbe6b632306004
 
-PODFILE CHECKSUM: 34f0124dd352b9a31e9c9819113c3024fae5f116
+PODFILE CHECKSUM: 4dd217c911134e7b027b3f52e592afa4b0015285
 
 COCOAPODS: 1.0.0

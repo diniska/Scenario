@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Scenario
 
 class ViewController: UIViewController {
 

@@ -90,8 +90,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Scenario"
-  s.exclude_files = "Scenario/Info.plist"
+  # s.source_files  = "Core/Scenario"
+  # s.exclude_files = "Core/Scenario/Info.plist"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -134,4 +134,19 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
+  # ――― Core as subspecs ―――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  s.default_subspec = "Core"
+  
+  s.subspec "Core" do |sp|
+    sp.source_files  = "Core/Scenario/"
+    sp.exclude_files = "Core/Scenario/Info.plist", "Core/Scenario/Scenario.h"
+  end
+  
+  # ――― Scenarios as subspecs ―――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  s.subspec "UberOAuth" do |sp|
+    sp.source_files = "UberOAuth/Sources/"
+    sp.dependency "UberKit"
+    sp.dependency "Scenario/Core"
+  end
+  
 end
