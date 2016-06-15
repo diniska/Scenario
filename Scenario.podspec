@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Scenario"
-  s.version      = "0.0.1-beta"
+  s.version      = "0.0.1-beta1"
   s.summary      = "Simplifies adding user scenarios to your app."
 
   # This description is used to generate tags and improve search results.
