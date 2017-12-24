@@ -3,3 +3,5 @@ language: objective-c
 xcode_project: Core/Scenario.xcodeproj # path to your xcodeproj folder
 xcode_scheme: Scenario
 xcode_sdk: iphonesimulator
+script:
+    xcodebuild test -project Core/Scenario.xcodeproj -scheme Scenario -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2'
