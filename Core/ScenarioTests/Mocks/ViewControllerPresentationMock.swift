@@ -12,8 +12,8 @@ class ViewControllerPresentationMock: UIViewController {
 
     var lastPresentedViewController: UIViewController?
 
-    override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
-        lastPresentedViewController = viewControllerToPresent
+    override func present(_ viewController: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+        lastPresentedViewController = viewController
     }
 
 }

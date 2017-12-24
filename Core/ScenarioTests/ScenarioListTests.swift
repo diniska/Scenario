@@ -14,7 +14,7 @@ private class SimpeScenario: Scenario {
     var lastCallback: ScenarioResultCallback?
     var lastViewController: UIViewController?
 
-    private func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
+    fileprivate func perfrom(from viewController: UIViewController, with parameters: ScenarioParameters?, callback: ScenarioResultCallback?) {
         lastParameters = parameters
         lastCallback = callback
         lastViewController = viewController
@@ -63,7 +63,7 @@ class ScenarioListTests: XCTestCase {
         list[name] = scenario
         var performer = ScenarioList.ScenarioPerformer(scenario: scenario)
         performer.parameters = parameters
-        list.addPerformer(performer, with: name)
+        list.addPerformer(performer: performer, with: name)
 
         list.performScenario(with: name, from: viewController)
 

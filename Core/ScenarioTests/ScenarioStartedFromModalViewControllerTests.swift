@@ -23,7 +23,7 @@ class ScenarioStartedFromModalViewControllerTests: XCTestCase {
         let mainViewController = ViewControllerPresentationMock()
         let childViewController = UIViewController()
 
-        let scenario = ScenarioStartedFromModalViewController { (parameters) -> UIViewController? in
+        let scenario = ScenarioStartedFromModalViewController { _,_  -> UIViewController? in
             return childViewController
         }
 
