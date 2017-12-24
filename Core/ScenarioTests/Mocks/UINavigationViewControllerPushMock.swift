@@ -11,7 +11,7 @@ import UIKit
 class UINavigationViewControllerPushMock: UINavigationController {
     var lastPushedViewController: UIViewController?
 
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         lastPushedViewController = viewController
         super.pushViewController(viewController, animated: animated)
     }

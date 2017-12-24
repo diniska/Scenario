@@ -23,7 +23,7 @@ class ScenarioStartedFromNavigationViewControllerTests: XCTestCase {
         let mainViewController = ViewControllerPresentationMock()
         let childViewController = UIViewController()
 
-        let scenario = ScenarioStartedFromNavigationViewController { (parameters) -> UIViewController? in
+        let scenario = ScenarioStartedFromNavigationViewController { _, _ in
             return childViewController
         }
 
@@ -39,7 +39,7 @@ class ScenarioStartedFromNavigationViewControllerTests: XCTestCase {
         let mainViewController = UINavigationController()
         let childViewController = UIViewController()
 
-        let scenario = ScenarioStartedFromNavigationViewController { (parameters) -> UIViewController? in
+        let scenario = ScenarioStartedFromNavigationViewController { _, _ in
             return childViewController
         }
 
@@ -54,7 +54,7 @@ class ScenarioStartedFromNavigationViewControllerTests: XCTestCase {
         let navigationViewController = UINavigationViewControllerPushMock(rootViewController: mainViewController)
         let childViewController = UIViewController()
 
-        let scenario = ScenarioStartedFromNavigationViewController { (parameters) -> UIViewController? in
+        let scenario = ScenarioStartedFromNavigationViewController { _, _ in
             return childViewController
         }
 
